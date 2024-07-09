@@ -9,10 +9,19 @@ const Navbar = () => {
     router.push("/contact"); // Navigate to the contact page
   };
 
+  const handleMainPageClick = () => {
+    router.push("/"); // Navigate to the contact page
+  };
+
   return (
     <nav className='bg-blue-600 border-b-2 border-blue-900 sticky top-0 z-50'>
       <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
-        <div className='text-lg font-bold text-white'>MyPromotion</div>
+        <button
+          className='text-lg font-bold text-white'
+          onClick={handleMainPageClick}
+        >
+          MyPromotion
+        </button>
         <div className='space-x-4'>
           <a href='#' className='text-white hover:text-blue-900 uppercase'>
             Αρχικη
