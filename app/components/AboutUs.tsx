@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <section className='container mx-auto my-8 p-4 bg-gray-100 rounded-lg shadow-lg'>
+    <section className='container mx-auto my-8 p-4 bg-white rounded-lg shadow-lg'>
       <h2 className='text-3xl font-bold mb-4 text-blue-900'>Σχετικά με Εμάς</h2>
       <p className='mb-4 text-gray-700'>
         Καλώς ήρθατε στην <strong>My-Promotion-Company</strong>, την κορυφαία
