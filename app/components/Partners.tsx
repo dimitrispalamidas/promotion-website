@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Partners = () => {
   return (
-    <section className='bg-gray-100 py-12 px-4 mb-6'>
+    <section className='py-12 px-4 mb-6'>
       <div className='container mx-auto'>
         <h2 className='text-3xl font-bold text-center text-blue-900 mb-12'>
           Οι Συνεργάτες μας

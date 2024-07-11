@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <header className='text-center py-20 bg-gray-100'>
+    <header className='text-center py-20 '>
       <div className='container mx-auto px-4'>
         <h1 className='text-4xl font-bold text-blue-900'>
           My Promotion Company

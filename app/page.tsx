@@ -8,7 +8,7 @@ import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <>
+    <div className='bg-gray-100'>
       <Navbar />
       <Hero />
       <ImageSection />
@@ -16,6 +16,6 @@ export default function Home() {
       <Partners />
       <Testimonials />
       <Footer />
-    </>
+    </div>
   );
 }
