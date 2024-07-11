@@ -8,14 +8,6 @@ const Navbar = () => {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleContactClick = () => {
-    router.push("/contact"); // Navigate to the contact page
-  };
-
-  const handleMainPageClick = () => {
-    router.push("/"); // Navigate to the main page
-  };
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -24,35 +16,37 @@ const Navbar = () => {
     <>
       <li>
         <a
-          href='#'
-          className='block px-4 py-2 text-white hover:text-blue-900 uppercase'
+          onClick={() => {
+            router.push("/");
+          }}
+          className='block px-4 py-2 text-white hover:text-blue-900 uppercase cursor-pointer'
         >
           Αρχικη
         </a>
       </li>
       <li>
         <a
-          href='#'
-          className='block px-4 py-2 text-white hover:text-blue-900 uppercase'
+          onClick={() => router.push("/projects")}
+          className='block px-4 py-2 text-white hover:text-blue-900 uppercase cursor-pointer'
         >
           Projects
         </a>
       </li>
       <li>
         <a
-          href='#'
-          className='block px-4 py-2 text-white hover:text-blue-900 uppercase'
+          onClick={() => router.push("/jobs")}
+          className='block px-4 py-2 text-white hover:text-blue-900 uppercase cursor-pointer'
         >
           Θεσεις εργασιας
         </a>
       </li>
       <li>
-        <button
-          onClick={handleContactClick}
-          className='block w-full text-left px-4 py-2 bg-blue-900 text-white rounded hover:bg-blue-600 uppercase'
+        <a
+          onClick={() => router.push("/contact")}
+          className='block w-full text-left px-4 py-2 bg-blue-900 text-white rounded hover:bg-blue-600 uppercase cursor-pointer'
         >
           Επικοινωνια
-        </button>
+        </a>
       </li>
     </>
   );
@@ -62,7 +56,9 @@ const Navbar = () => {
       <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
         <button
           className='text-lg font-bold text-white'
-          onClick={handleMainPageClick}
+          onClick={() => {
+            router.push("/");
+          }}
         >
           MyPromotion
         </button>
