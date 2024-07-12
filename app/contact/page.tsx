@@ -1,3 +1,4 @@
+import ContactForm from "../components/ContactForm";
 import Navbar from "../components/Navbar";
 
 const Contact = () => {
@@ -29,6 +30,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ContactForm />
     </>
   );
 };
