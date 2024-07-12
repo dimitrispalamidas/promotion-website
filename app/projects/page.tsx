@@ -1,5 +1,12 @@
-const page = () => {
-  return <div>PROJECTS!</div>;
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+
+const Projects = () => {
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
-export default page;
+export default Projects;

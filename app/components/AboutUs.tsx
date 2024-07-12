@@ -17,7 +17,7 @@ const AboutUs = () => {
         ref={ref1}
         initial={{ opacity: 0, x: -100 }}
         animate={inView1 ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
-        transition={{ duration: 1, delay: 0.75 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
         <h2 className='text-3xl font-bold mb-4 text-blue-900'>
           Σχετικά με Εμάς
@@ -33,7 +33,7 @@ const AboutUs = () => {
         ref={ref2}
         initial={{ opacity: 0, x: 100 }}
         animate={inView2 ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-        transition={{ duration: 1, delay: 0.75 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
         <h3 className='text-2xl font-semibold mb-2 text-blue-800'>
           Οι Υπηρεσίες Μας
@@ -65,7 +65,7 @@ const AboutUs = () => {
         ref={ref3}
         initial={{ opacity: 0, x: -100 }}
         animate={inView3 ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
-        transition={{ duration: 1, delay: 0.75 }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
         <h3 className='text-2xl font-semibold mb-2 text-blue-800'>
           Γιατί Να Μας Επιλέξετε

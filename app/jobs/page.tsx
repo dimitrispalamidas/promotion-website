@@ -1,5 +1,12 @@
-const page = () => {
-  return <div>Θεσεις Εργασιας!</div>;
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+
+const Jobs = () => {
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
-export default page;
+export default Jobs;
