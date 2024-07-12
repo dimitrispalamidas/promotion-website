@@ -1,6 +1,11 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
     <footer className='bg-blue-900 py-12 px-4 text-white'>
       <div className='container mx-auto'>
@@ -43,17 +48,31 @@ const Footer = () => {
             <h3 className='font-bold text-lg'>Πληροφορίες</h3>
             <ul className='mt-4 space-y-2'>
               <li>
-                <a href='#' className='hover:text-blue-300'>
-                  Ποιοί Είμαστε
-                </a>
-              </li>
-              <li>
-                <a href='#' className='hover:text-blue-300'>
+                <a href='#about-us' className='hover:text-blue-300'>
                   Οι Υπηρεσίες μας
                 </a>
               </li>
               <li>
-                <a href='#' className='hover:text-blue-300'>
+                <a
+                  onClick={() => router.push("/projects")}
+                  className='hover:text-blue-300 cursor-pointer'
+                >
+                  Τα Project μας
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => router.push("/jobs")}
+                  className='hover:text-blue-300 cursor-pointer'
+                >
+                  Θεσεις εργασιας
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => router.push("/contact")}
+                  className='hover:text-blue-300 cursor-pointer'
+                >
                   Χάρτες
                 </a>
               </li>

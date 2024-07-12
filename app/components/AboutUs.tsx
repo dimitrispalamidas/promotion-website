@@ -9,7 +9,10 @@ const AboutUs = () => {
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className='container mx-auto my-8 p-4 bg-white rounded-lg shadow-lg'>
+    <section
+      id='about-us'
+      className='container mx-auto my-8 p-4 bg-white rounded-lg shadow-lg'
+    >
       <motion.div
         ref={ref1}
         initial={{ opacity: 0, x: -100 }}
