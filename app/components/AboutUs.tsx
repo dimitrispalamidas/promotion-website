@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const AboutUs = () => {
-  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.4 });
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
 
