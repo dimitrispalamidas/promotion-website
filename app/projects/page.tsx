@@ -28,12 +28,13 @@ const Projects = () => {
       <div className='container mx-auto py-10'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
           {projects.map((project) => (
-            <Project
-              key={project.title}
-              title={project.title}
-              imageUrl={project.imageUrl}
-              onImageClick={() => handleImageClick(project)}
-            />
+            <div key={project.title} className='flex justify-center'>
+              <Project
+                title={project.title}
+                imageUrl={project.imageUrl}
+                onImageClick={() => handleImageClick(project)}
+              />
+            </div>
           ))}
         </div>
         {selectedProject && (
