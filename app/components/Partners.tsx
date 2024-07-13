@@ -10,7 +10,7 @@ const Partners = () => {
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4'>
           <div>
             <Image
-              src='/protergia.png'
+              src='/partners/protergia.png'
               alt='protergia'
               width={150}
               height={150}
@@ -19,7 +19,7 @@ const Partners = () => {
           </div>
           <div>
             <Image
-              src='/cocacola.png'
+              src='/partners/cocacola.png'
               alt='cocacola'
               width={150}
               height={150}
@@ -28,7 +28,7 @@ const Partners = () => {
           </div>
           <div>
             <Image
-              src='/lampou.png'
+              src='/partners/lampou.png'
               alt='lampou'
               width={150}
               height={150}
@@ -37,7 +37,7 @@ const Partners = () => {
           </div>
           <div>
             <Image
-              src='/j_walker.png'
+              src='/partners/j_walker.png'
               alt='j_walker'
               width={150}
               height={150}
@@ -46,7 +46,7 @@ const Partners = () => {
           </div>
           <div>
             <Image
-              src='/poukamisas.png'
+              src='/partners/poukamisas.png'
               alt='poukamisas'
               width={150}
               height={150}
@@ -55,7 +55,7 @@ const Partners = () => {
           </div>
           <div>
             <Image
-              src='/lays.png'
+              src='/partners/lays.png'
               alt='lays'
               width={150}
               height={150}

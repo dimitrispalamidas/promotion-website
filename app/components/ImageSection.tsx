@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const images = ["/promo.jpg", "/promo-02.jpg", "/promo-03.jpg"];
+const images = [
+  "/home-effect/promo.jpg",
+  "/home-effect/promo-02.jpg",
+  "/home-effect/promo-03.jpg",
+];
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
