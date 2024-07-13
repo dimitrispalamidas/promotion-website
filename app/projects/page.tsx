@@ -4,16 +4,21 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Project from "./Project";
 
-const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+interface Project {
+  title: string;
+  imageUrl: string;
+}
 
-  const projects = [
+const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const projects: Project[] = [
     { title: "Project 1", imageUrl: "/home-effect/promo.jpg" },
     { title: "Project 2", imageUrl: "/home-effect/promo-02.jpg" },
     { title: "Project 3", imageUrl: "/home-effect/promo-03.jpg" },
   ];
 
-  const handleImageClick = (project) => {
+  const handleImageClick = (project: Project) => {
     setSelectedProject(project);
   };
 

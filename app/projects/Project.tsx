@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-const Project = ({ title, imageUrl, onImageClick }) => {
+interface ProjectProps {
+  title: string;
+  imageUrl: string;
+  onImageClick: () => void;
+}
+
+const Project: React.FC<ProjectProps> = ({ title, imageUrl, onImageClick }) => {
   return (
     <div className='project'>
       <h3 className='text-lg font-bold mb-2'>{title}</h3>
