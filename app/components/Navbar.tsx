@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 const Navbar = () => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const Navbar = () => {
           onClick={() => {
             router.push("/");
           }}
-          className='block px-4 py-2 text-white hover:text-blue-900 uppercase cursor-pointer'
+          className='block px-4 py-2 text-white hover:text-red-900 uppercase cursor-pointer'
         >
           Αρχικη
         </a>
@@ -27,7 +28,7 @@ const Navbar = () => {
       <li>
         <a
           onClick={() => router.push("/projects")}
-          className='block px-4 py-2 text-white hover:text-blue-900 uppercase cursor-pointer'
+          className='block px-4 py-2 text-white hover:text-red-900 uppercase cursor-pointer'
         >
           Projects
         </a>
@@ -35,7 +36,7 @@ const Navbar = () => {
       <li>
         <a
           onClick={() => router.push("/jobs")}
-          className='block px-4 py-2 text-white hover:text-blue-900 uppercase cursor-pointer'
+          className='block px-4 py-2 text-white hover:text-red-900 uppercase cursor-pointer'
         >
           Θεσεις εργασιας
         </a>
@@ -43,7 +44,7 @@ const Navbar = () => {
       <li>
         <a
           onClick={() => router.push("/contact")}
-          className='block w-full text-left px-4 py-2 bg-blue-900 text-white rounded hover:bg-blue-600 uppercase cursor-pointer'
+          className='block w-full text-left px-6 py-2 bg-[#8B0000] text-white rounded-lg hover:bg-[#A52A2A] transition duration-300 uppercase cursor-pointer'
         >
           Επικοινωνια
         </a>
@@ -52,16 +53,18 @@ const Navbar = () => {
   );
 
   return (
-    <nav className='bg-blue-600 border-b-2 border-blue-900 sticky top-0 z-50'>
+    <nav className='bg-red-600 border-b-2 border-red-900 sticky top-0 z-50'>
       <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
-        <button
-          className='text-lg font-bold text-white'
+        <Image
+          src={"/logowhite.png"}
+          alt='Logo of STPromotion'
+          width={200}
+          height={50}
           onClick={() => {
             router.push("/");
           }}
-        >
-          MyPromotion
-        </button>
+          className='cursor-pointer'
+        />
         <div className='relative md:hidden'>
           <button
             onClick={toggleMenu}
@@ -74,7 +77,7 @@ const Navbar = () => {
             )}
           </button>
           {menuOpen && (
-            <ul className='absolute right-0 mt-2 w-48 bg-blue-600 border border-blue-900 rounded-md shadow-lg'>
+            <ul className='absolute right-0 mt-2 w-48 bg-red-600 border border-red-900 rounded-md shadow-lg'>
               <NavMenu />
             </ul>
           )}

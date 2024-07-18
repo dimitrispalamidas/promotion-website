@@ -25,15 +25,15 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='container mx-auto my-8 p-4 border'>
-      <h2 className='text-2xl font-semibold text-blue-800 mb-4'>
+    <div className='container mx-auto my-8 p-6 bg-white shadow-md rounded-lg'>
+      <h2 className='text-2xl font-semibold text-[#800000] mb-6 font-merriweather text-center'>
         Επικοινωνήστε Μαζί Μας
       </h2>
-      <form onSubmit={handleSubmit} className='space-y-4'>
+      <form onSubmit={handleSubmit} className='space-y-6'>
         <div>
           <label
             htmlFor='name'
-            className='block text-sm font-medium text-gray-700'
+            className='block text-sm font-medium text-gray-700 font-roboto'
           >
             Όνομα
           </label>
@@ -44,13 +44,13 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+            className='mt-1 block w-full rounded-lg border border-gray-300 focus:border-[#800000] focus:outline-none focus:ring-2 focus:ring-[#800000] font-roboto p-3'
           />
         </div>
         <div>
           <label
             htmlFor='email'
-            className='block text-sm font-medium text-gray-700'
+            className='block text-sm font-medium text-gray-700 font-roboto'
           >
             Email
           </label>
@@ -61,13 +61,13 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+            className='mt-1 block w-full rounded-lg border border-gray-300 focus:border-[#800000] focus:outline-none focus:ring-2 focus:ring-[#800000] font-roboto p-3'
           />
         </div>
         <div>
           <label
             htmlFor='message'
-            className='block text-sm font-medium text-gray-700'
+            className='block text-sm font-medium text-gray-700 font-roboto'
           >
             Μήνυμα
           </label>
@@ -78,13 +78,13 @@ const ContactForm = () => {
             onChange={handleChange}
             required
             rows={4}
-            className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50'
+            className='mt-1 block w-full rounded-lg border border-gray-300 focus:border-[#800000] focus:outline-none focus:ring-2 focus:ring-[#800000] font-roboto p-3'
           ></textarea>
         </div>
         <div className='flex justify-center'>
           <button
             type='submit'
-            className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+            className='inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-[#800000] hover:bg-[#A52A2A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#800000] font-roboto'
           >
             Υποβολή
           </button>

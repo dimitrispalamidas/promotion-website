@@ -13,7 +13,6 @@ export default function Home() {
       <Hero />
       <ImageSection />
       <AboutUs />
-      <Partners />
       <Testimonials />
       <Footer />
     </div>

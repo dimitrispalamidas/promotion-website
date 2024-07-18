@@ -1,11 +1,19 @@
+import Image from "next/image";
+
 const Hero = () => {
   return (
-    <header className='text-center py-20 '>
-      <div className='container mx-auto px-4'>
-        <h1 className='text-4xl font-bold text-blue-900'>
-          My Promotion Company
-        </h1>
-        <p className='mt-4 text-gray-600'>Our passion is your branding.</p>
+    <header className='bg-gradient-to-r from-gray-600 to-gray-900 text-center py-20 shadow-lg'>
+      <div className='container mx-auto flex flex-col items-center'>
+        <Image
+          src={"/logo.png"}
+          alt='Logo of STPromotion'
+          width={700}
+          height={200}
+          className='rounded-md'
+        />
+        <p className='text-gray-300 text-2xl mt-6 font-bold italic underline-offset-0'>
+          Το πάθος μας είναι η προώθησή σας
+        </p>
       </div>
     </header>
   );
