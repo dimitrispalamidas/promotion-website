@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <header className='bg-gradient-to-r from-gray-600 to-gray-900 text-center py-20 shadow-lg'>
+    <header className='bg-gradient-to-r from-gray-600 to-gray-800 text-center py-20 shadow-lg'>
       <div className='container mx-auto flex flex-col items-center'>
         <Image
           src={"/logo.png"}
