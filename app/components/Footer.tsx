@@ -24,7 +24,7 @@ const Footer = () => {
             <Image
               src={"/logowhite.png"}
               alt='Logo of STPromotion'
-              width={200}
+              width={150}
               height={50}
               onClick={() => {
                 router.push("/");

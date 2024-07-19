@@ -7,7 +7,7 @@ const Hero = () => {
         <Image
           src={"/logo.png"}
           alt='Logo of STPromotion'
-          width={700}
+          width={600}
           height={200}
           className='rounded-md'
         />
