@@ -11,13 +11,20 @@ const Jobs = () => {
           Γίνε μέλος της ομάδας μας
         </h1>
         <p className='text-center text-gray-700 mb-8 text-lg font-roboto'>
-          Εάν επιθυμείτε να συμμετάσχετε στην ομάδα μας, μπορείτε να στείλετε το
-          βιογραφικό σας στο παρακατω email:{" "}
-          <strong>tampoureaspromo@gmail.com</strong> ή να συμπληρώσετε την
-          παρακάτω φόρμα και θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.
+          Εάν θα θέλατε να συμμετέχετε στις εκδηλώσεις και τα προγράμματα της
+          εταιρείας μας, μπορείτε να στείλετε το βιογραφικό σας στο παρακάτω
+          email:{" "}
+          <a
+            href='mailto:tampoureaspromo@gmail.com'
+            className='text-blue-500 underline'
+          >
+            tampoureaspromo@gmail.com
+          </a>{" "}
+          ή να συμπληρώσετε την παρακάτω φόρμα και θα επικοινωνήσουμε μαζί σας
+          το συντομότερο δυνατό.
         </p>
+        <ContactForm />
       </div>
-      <ContactForm />
       <Footer />
     </div>
   );

@@ -1,31 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: "",
     email: "",
-    subject: "",
+    phone: "",
     message: "",
-  });
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
   };
 
-  const handleChange = (e: any) => {
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData({
+      ...formData,
       [name]: value,
-    }));
+    });
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Email sent successfully!");
+          setFormData(initialState); // Reset form data
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send email. Please try again.");
+        }
+      );
   };
 
   return (
-    <div className='container mx-auto my-8 p-6 bg-white shadow-md rounded-lg'>
+    <div className='max-w-screen-lg mx-auto my-8 p-6 bg-white shadow-md rounded-lg'>
       <h2 className='text-2xl font-semibold text-[#800000] mb-6 font-merriweather text-center'>
         Επικοινωνήστε Μαζί Μας
       </h2>
@@ -59,6 +88,23 @@ const ContactForm = () => {
             id='email'
             name='email'
             value={formData.email}
+            onChange={handleChange}
+            required
+            className='mt-1 block w-full rounded-lg border border-gray-300 focus:border-[#800000] focus:outline-none focus:ring-2 focus:ring-[#800000] font-roboto p-3'
+          />
+        </div>
+        <div>
+          <label
+            htmlFor='phone'
+            className='block text-sm font-medium text-gray-700 font-roboto'
+          >
+            Τηλέφωνο
+          </label>
+          <input
+            type='tel'
+            id='phone'
+            name='phone'
+            value={formData.phone}
             onChange={handleChange}
             required
             className='mt-1 block w-full rounded-lg border border-gray-300 focus:border-[#800000] focus:outline-none focus:ring-2 focus:ring-[#800000] font-roboto p-3'

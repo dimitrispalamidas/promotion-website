@@ -10,7 +10,7 @@ const Contact = () => {
       <h1 className='text-3xl font-bold text-center my-8 text-[#800000] font-merriweather'>
         Επικοινωνία
       </h1>
-      <div className='container mx-auto my-8 p-4'>
+      <div className='max-w-screen-lg mx-auto my-8 p-4'>
         <div>
           <h2 className='text-2xl font-semibold text-[#800000] mb-4 font-merriweather'>
             Τα Γραφεία Μας
