@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 
 interface ProjectProps {
@@ -12,13 +13,16 @@ const Project: React.FC<ProjectProps> = ({ title, imageUrl, onImageClick }) => {
       <h3 className='text-lg font-bold mb-2 text-[#800000] font-merriweather'>
         {title}
       </h3>
-      <div className='image-container cursor-pointer' onClick={onImageClick}>
+      <div
+        className='relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 cursor-pointer'
+        onClick={onImageClick}
+      >
         <Image
           src={imageUrl}
           alt={title}
-          className='project-image transform transition-transform duration-200 hover:scale-105 rounded-lg'
-          width={300}
-          height={200}
+          className='transform transition-transform duration-200 hover:scale-105 rounded-lg'
+          objectFit='cover'
+          layout='fill'
         />
       </div>
     </div>
