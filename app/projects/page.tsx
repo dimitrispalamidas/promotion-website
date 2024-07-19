@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Project from "./Project";
 import Footer from "../components/Footer";
@@ -15,7 +15,7 @@ interface Project {
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const modalContentRef = useRef<HTMLDivElement | null>(null);
 
   const projects: Project[] = [
     {
@@ -71,26 +71,13 @@ const Projects = () => {
     }
   }, [selectedProject]);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX !== null) {
-      const touchEndX = e.changedTouches[0].clientX;
-      if (touchStartX - touchEndX > 50) {
-        handleNextImage();
-      } else if (touchStartX - touchEndX < -50) {
-        handlePreviousImage();
-      }
-      setTouchStartX(null);
-    }
-  };
-
   const handleOverlayClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-    if (e.target === e.currentTarget) {
+    if (
+      modalContentRef.current &&
+      !modalContentRef.current.contains(e.target as Node)
+    ) {
       handleCloseModal();
     }
   };
@@ -118,9 +105,9 @@ const Projects = () => {
   }, [selectedProject, handlePreviousImage, handleNextImage]);
 
   return (
-    <div className='flex flex-col min-h-screen'>
+    <div className='flex flex-col'>
       <Navbar />
-      <div className='container mx-auto py-10 flex-grow'>
+      <div className='container mx-auto py-10'>
         <h1 className='text-3xl font-bold text-center text-[#800000] mb-6 font-merriweather'>
           Τα Project μας
         </h1>
@@ -150,10 +137,9 @@ const Projects = () => {
               zIndex: 1000,
             }}
             onClick={handleOverlayClick}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
           >
             <div
+              ref={modalContentRef}
               style={{
                 position: "relative",
                 width: "100%",
@@ -203,9 +189,8 @@ const Projects = () => {
               <div
                 style={{
                   position: "relative",
-                  width: "80%",
-                  height: "80%",
-                  zIndex: 1005,
+                  width: "100%",
+                  height: "100%",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",

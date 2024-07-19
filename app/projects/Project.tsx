@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 
 interface ProjectProps {
@@ -9,12 +8,12 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ title, imageUrl, onImageClick }) => {
   return (
-    <div className='project p-4 bg-gray-100 rounded-lg shadow-lg'>
+    <div className='p-4 bg-gray-100 rounded-lg shadow-lg w-full'>
       <h3 className='text-lg font-bold mb-2 text-[#800000] font-merriweather'>
         {title}
       </h3>
       <div
-        className='relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 cursor-pointer'
+        className='relative w-full h-64 sm:h-72 md:h-80 lg:h-96 cursor-pointer'
         onClick={onImageClick}
       >
         <Image
