@@ -9,8 +9,11 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Promotion",
+  title: "S.T.Promotion",
   description: "Promotion Marketing Page",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
