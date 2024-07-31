@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/components/ImageSection.tsx"
+    "app/components/ImageSection.tsx",
+    "app/components/StarRating.jsx"
   ],
   "exclude": ["node_modules"]
 }
