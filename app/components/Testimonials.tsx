@@ -30,7 +30,12 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get<PlaceDetailsResponse>("/api/reviews");
+        const response = await axios.get<PlaceDetailsResponse>("/api/reviews", {
+          params: {
+            language: "el", // Set the language to Greek
+          },
+        });
+        console.log("Fetched reviews:", response.data.result.reviews); // Log the reviews to check the language
         setReviews(response.data.result.reviews);
       } catch (error) {
         console.error("Error fetching reviews:", error);
