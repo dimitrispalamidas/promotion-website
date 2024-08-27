@@ -28,7 +28,7 @@ const FullscreenVideo = () => {
             <br />
             θέλει
             <br />
-            τόλμη
+            τόλμη.
           </h1>
         </div>
       </div>
