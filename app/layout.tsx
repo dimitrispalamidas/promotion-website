@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Roboto, Open_Sans, Merriweather } from "next/font/google";
+import { Merriweather } from "next/font/google";
 
 import type { Metadata } from "next";
 
@@ -10,7 +10,7 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   title: "S.T.Promotion",
-  description: "Promotion Marketing Page",
+  description: "Promotion Kalamata",
   icons: {
     icon: "/favicon.png",
   },

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
@@ -8,10 +8,30 @@ import Image from "next/image";
 const Navbar = () => {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [iconColor, setIconColor] = useState("text-white"); // Default color
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewportHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > viewportHeight) {
+        setIconColor("text-black");
+      } else {
+        setIconColor("text-white");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const NavMenu = () => (
     <>
@@ -53,10 +73,10 @@ const Navbar = () => {
   );
 
   return (
-    <nav className='bg-red-600 border-b-2 border-red-900 sticky top-0 z-50'>
+    <nav className='sticky top-0 left-0 w-full z-50 bg-transparent'>
       <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
         <Image
-          src={"/logowhite.png"}
+          src={"/logo.png"}
           alt='Logo of STPromotion'
           width={150}
           height={50}
@@ -65,10 +85,10 @@ const Navbar = () => {
           }}
           className='cursor-pointer'
         />
-        <div className='relative md:hidden'>
+        <div className='relative'>
           <button
             onClick={toggleMenu}
-            className='text-white focus:outline-none'
+            className={`focus:outline-none ${iconColor}`}
           >
             {menuOpen ? (
               <FaTimes className='w-6 h-6' />
@@ -82,9 +102,6 @@ const Navbar = () => {
             </ul>
           )}
         </div>
-        <ul className='hidden md:flex md:space-x-4 items-center'>
-          <NavMenu />
-        </ul>
       </div>
     </nav>
   );

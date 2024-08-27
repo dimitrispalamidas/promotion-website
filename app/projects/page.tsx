@@ -18,32 +18,32 @@ const Projects = () => {
   const modalContentRef = useRef<HTMLDivElement | null>(null);
 
   const projects: Project[] = [
-    {
-      title: "Project 1",
-      imageUrls: [
-        "/project-1/1.1.jpg",
-        "/project-1/1.2.jpg",
-        "/project-1/1.3.jpg",
-        "/project-1/1.4.jpg",
-      ],
-    },
-    {
-      title: "Project 2",
-      imageUrls: [
-        "/project-2/2.1.jpg",
-        "/project-2/2.2.jpg",
-        "/project-2/2.3.jpg",
-      ],
-    },
-    {
-      title: "Project 3",
-      imageUrls: [
-        "/project-3/3.1.jpg",
-        "/project-3/3.2.jpg",
-        "/project-3/3.3.jpg",
-        "/project-3/3.4.jpg",
-      ],
-    },
+    // {
+    //   title: "Project 1",
+    //   imageUrls: [
+    //     "/project-1/1.1.jpg",
+    //     "/project-1/1.2.jpg",
+    //     "/project-1/1.3.jpg",
+    //     "/project-1/1.4.jpg",
+    //   ],
+    // },
+    // {
+    //   title: "Project 2",
+    //   imageUrls: [
+    //     "/project-2/2.1.jpg",
+    //     "/project-2/2.2.jpg",
+    //     "/project-2/2.3.jpg",
+    //   ],
+    // },
+    // {
+    //   title: "Project 3",
+    //   imageUrls: [
+    //     "/project-3/3.1.jpg",
+    //     "/project-3/3.2.jpg",
+    //     "/project-3/3.3.jpg",
+    //     "/project-3/3.4.jpg",
+    //   ],
+    // },
   ];
 
   const handleImageClick = (project: Project, index: number) => {

@@ -9,6 +9,7 @@ import {
   FaLightbulb,
   FaChartLine,
   FaCheck,
+  FaLaptop,
 } from "react-icons/fa";
 import Image from "next/image";
 
@@ -98,6 +99,14 @@ const AboutUs = () => {
             <div>
               <strong>Δειγματοδιανομές: </strong> Δειγματοδιανομές προϊόντων για
               άμεση εμπειρία και γνωριμία με το κοινό.
+            </div>
+          </li>
+          <li className='mb-2 flex items-start'>
+            <FaLaptop className='text-[#8B0000] mr-2 w-4 h-4 flex-shrink-0' />
+            <div>
+              <strong>Digital Marketing: </strong> Διαχείριση και ανάπτυξη του
+              ψηφιακού σας αποτυπώματος μέσα από στρατηγικές Social Media,
+              Content Creator, φωτογραφίων/βίντεο και ιστοσελίδων.
             </div>
           </li>
         </ul>
