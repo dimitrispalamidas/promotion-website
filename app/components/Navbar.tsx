@@ -78,7 +78,7 @@ const Navbar = () => {
         <Image
           src={"/logo.png"}
           alt='Logo of STPromotion'
-          width={150}
+          width={250}
           height={50}
           onClick={() => {
             router.push("/");
