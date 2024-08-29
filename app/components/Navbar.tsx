@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
@@ -8,33 +8,13 @@ import Image from "next/image";
 const Navbar = () => {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [iconColor, setIconColor] = useState("text-white"); // Default color
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const viewportHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-
-      if (scrollPosition > viewportHeight) {
-        setIconColor("text-black");
-      } else {
-        setIconColor("text-white");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const NavMenu = () => (
-    <>
+  const NavMenu = ({ className }) => (
+    <ul className={`flex flex-col md:flex-row ${className}`}>
       <li>
         <a
           onClick={() => {
@@ -64,44 +44,43 @@ const Navbar = () => {
       <li>
         <a
           onClick={() => router.push("/contact")}
-          className='block w-full text-left px-6 py-2 bg-[#8B0000] text-white rounded-lg hover:bg-[#A52A2A] transition duration-300 uppercase cursor-pointer'
+          className='block w-full md:w-auto text-left md:text-center px-6 py-2 bg-[#8B0000] text-white rounded-lg hover:bg-[#A52A2A] transition duration-300 uppercase cursor-pointer'
         >
           Επικοινωνια
         </a>
       </li>
-    </>
+    </ul>
   );
 
   return (
-    <nav className='sticky top-0 left-0 w-full z-50 bg-transparent'>
-      <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
+    <nav className='sticky top-0 left-0 w-full z-50 bg-[#F70100] '>
+      <div className='mx-auto px-4 py-2 flex justify-between items-center'>
         <Image
-          src={"/logo.png"}
+          src={"/logowhite.png"}
           alt='Logo of STPromotion'
-          width={250}
+          width={175}
           height={50}
           onClick={() => {
             router.push("/");
           }}
           className='cursor-pointer'
         />
-        <div className='relative'>
-          <button
-            onClick={toggleMenu}
-            className={`focus:outline-none ${iconColor}`}
-          >
+        <div className='flex md:hidden'>
+          <button onClick={toggleMenu} className='text-white'>
             {menuOpen ? (
               <FaTimes className='w-6 h-6' />
             ) : (
               <FaBars className='w-6 h-6' />
             )}
           </button>
-          {menuOpen && (
-            <ul className='absolute right-0 mt-2 w-48 bg-red-600 border border-red-900 rounded-md shadow-lg'>
-              <NavMenu />
-            </ul>
-          )}
         </div>
+        {/* Show NavMenu inline on medium screens and larger */}
+        <NavMenu className='hidden md:flex md:items-center md:space-x-4' />
+        {menuOpen && (
+          <div className='absolute top-16 right-0 mt-2 w-48 bg-red-600 border border-red-900 rounded-md shadow-lg md:hidden'>
+            <NavMenu className='flex flex-col' />
+          </div>
+        )}
       </div>
     </nav>
   );
