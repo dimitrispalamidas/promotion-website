@@ -13,7 +13,11 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const NavMenu = ({ className }) => (
+  interface NavMenuProps {
+    className?: string;
+  }
+
+  const NavMenu: React.FC<NavMenuProps> = ({ className }) => (
     <ul className={`flex flex-col md:flex-row ${className}`}>
       <li>
         <a
