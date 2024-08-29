@@ -57,7 +57,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className='sticky top-0 left-0 w-full z-50 bg-[#F70100] '>
+    <nav className='sticky top-0 left-0 w-full z-50 bg-[#F70100]'>
       <div className='mx-auto px-4 py-2 flex justify-between items-center'>
         <Image
           src={"/logowhite.png"}
@@ -78,10 +78,9 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        {/* Show NavMenu inline on medium screens and larger */}
         <NavMenu className='hidden md:flex md:items-center md:space-x-4' />
         {menuOpen && (
-          <div className='absolute top-16 right-0 mt-2 w-48 bg-red-600 border border-red-900 rounded-md shadow-lg md:hidden'>
+          <div className='absolute top-16 right-0 mt-2 w-48 bg-red-600 border border-red-900 rounded-md shadow-lg md:hidden z-50'>
             <NavMenu className='flex flex-col' />
           </div>
         )}
