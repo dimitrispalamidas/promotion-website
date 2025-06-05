@@ -8,8 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#1f2937",
+          dark: "#111827",
+        },
+        secondary: "#4b5563",
+        accent: "#6b7280",
+        background: "#ffffff",
+        foreground: "#1a1a1a",
+      },
       fontFamily: {
-        roboto: ["var(--font-roboto)", "sans-serif"],
+        sans: ["var(--font-inter)"],
+        playfair: ["var(--font-playfair)"],
       },
     },
   },

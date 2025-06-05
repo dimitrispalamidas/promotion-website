@@ -2,6 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #1a365d;
+  --primary-dark: #0f2942;
+  --secondary: #2d3748;
+  --accent: #4299e1;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply text-foreground bg-background;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-bold;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

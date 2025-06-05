@@ -2,16 +2,20 @@ import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
 import FullscreenVideo from "./components/FullScreenVideo";
 import Navbar from "./components/Navbar";
-import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <div>
+    <main className="min-h-screen">
       <Navbar />
       <FullscreenVideo />
-      <AboutUs />
-      <Testimonials />
+      
+      <div className="bg-white">
+        <div className="container">
+          <AboutUs />
+        </div>
+      </div>
+
       <Footer />
-    </div>
+    </main>
   );
 }
