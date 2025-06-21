@@ -36,7 +36,7 @@ const ContactPage = () => {
         from_phone: formData.phone,
         subject: formData.subject,
         message: formData.message,
-        to_email: "palamidas.dim@gmail.com",
+        to_email: "tampoureaspromo@gmail.com",
       };
 
       const result = await emailjs.send(
